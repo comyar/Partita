@@ -1,0 +1,65 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "96ADACF899E2A24476AEEAF4793D6EE820B9B819",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "74914B9EE9EBF231E7B13EF2EEED44A03386E384" : 0,
+    "3F71BD4C747CA866AF046C34BD7CE42A76158BC9" : 0,
+    "96ADACF899E2A24476AEEAF4793D6EE820B9B819" : 0,
+    "2192753D52723932CEB751B153E7D54C8953DF7B" : 0,
+    "2225EB71B37609C7774278206AB6E3E6F7133EBA" : 0,
+    "EA8ABE342AD5A0D6FDE4A373157E673C374A215C" : 0,
+    "6138F21667ED3AF98430D880DCC3B3F4E84D4954" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AE6BAE13-BFB5-4E40-B4A9-5CE079F141AE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "74914B9EE9EBF231E7B13EF2EEED44A03386E384" : "WMGaugeView\/",
+    "3F71BD4C747CA866AF046C34BD7CE42A76158BC9" : "Chronos-Swift\/",
+    "96ADACF899E2A24476AEEAF4793D6EE820B9B819" : "Partita\/",
+    "2192753D52723932CEB751B153E7D54C8953DF7B" : "ios-process-button\/",
+    "2225EB71B37609C7774278206AB6E3E6F7133EBA" : "TuningFork\/",
+    "EA8ABE342AD5A0D6FDE4A373157E673C374A215C" : "Metronome\/",
+    "6138F21667ED3AF98430D880DCC3B3F4E84D4954" : "LiquidLoader\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Partita",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Partita.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Viddi\/ios-process-button.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2192753D52723932CEB751B153E7D54C8953DF7B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:comyarzaheri\/TuningFork.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2225EB71B37609C7774278206AB6E3E6F7133EBA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:comyarzaheri\/Chronos-Swift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "3F71BD4C747CA866AF046C34BD7CE42A76158BC9"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:comyarzaheri\/LiquidLoader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6138F21667ED3AF98430D880DCC3B3F4E84D4954"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:Will-tm\/WMGaugeView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "74914B9EE9EBF231E7B13EF2EEED44A03386E384"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:comyarzaheri\/Partita.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "96ADACF899E2A24476AEEAF4793D6EE820B9B819"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:comyarzaheri\/Metronome.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EA8ABE342AD5A0D6FDE4A373157E673C374A215C"
+    }
+  ]
+}
