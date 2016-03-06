@@ -10,7 +10,7 @@ pod 'PermissionScope', '~> 1.0.2'
 pod 'BubbleTransition', '~> 1.0.1'
 pod 'BFPaperButton', '~> 2.0.18'
 pod 'WMGaugeView', '~> 0.0.3'
-pod 'TuningFork', '~> 0.0.9'
+pod 'TuningFork', '~> 0.1.1'
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
