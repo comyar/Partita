@@ -38,18 +38,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // MARK: Properties
     
     var window: UIWindow?
-    private var mainViewController: MainViewController?
+    fileprivate var mainViewController: MainViewController?
     
     // MARK: UIApplicationDelegate
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         do {
             try AVAudioSession.sharedInstance().setActive(false)
         } catch {
             // TODO: ??? *shrug*
             print("Something is broke with AVAudioSession, yo!")
         }
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = UIColor.backgroundColor()
         mainViewController = MainViewController()
         window?.rootViewController = mainViewController
@@ -57,11 +57,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillResignActive(application: UIApplication) {
+    func applicationWillResignActive(_ application: UIApplication) {
         mainViewController?.stopTuner()
     }
     
-    func applicationDidEnterBackground(application: UIApplication) {
+    func applicationDidEnterBackground(_ application: UIApplication) {
         mainViewController?.stopTuner()
     }
 }

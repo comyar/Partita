@@ -41,17 +41,17 @@ class TunerView: UIView {
     let gaugeView: WMGaugeView
     let actionButton: BFPaperButton
     
-    private let titleLabel: UILabel
-    private let pitchTitleLabel: UILabel
+    fileprivate let titleLabel: UILabel
+    fileprivate let pitchTitleLabel: UILabel
     
     // MARK: Creating a TunerView
     
     override init(frame: CGRect) {
         titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFontOfSize(32, weight: UIFontWeightLight)
+        titleLabel.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightLight)
         titleLabel.adjustsFontSizeToFitWidth = true
         titleLabel.textColor = UIColor.textColor()
-        titleLabel.textAlignment = .Center
+        titleLabel.textAlignment = .center
         titleLabel.text = "Tuner"
         
         gaugeView = WMGaugeView()
@@ -69,32 +69,32 @@ class TunerView: UIView {
         gaugeView.scaleDivisionsWidth = 0.007
         gaugeView.scaleSubdivisionsLength = 0.02
         gaugeView.scaleSubdivisionsWidth = 0.002
-        gaugeView.backgroundColor = UIColor.clearColor()
+        gaugeView.backgroundColor = UIColor.clear
         gaugeView.needleStyle = WMGaugeViewNeedleStyleFlatThin
         gaugeView.needleScrewStyle = WMGaugeViewNeedleScrewStylePlain
         gaugeView.innerBackgroundStyle = WMGaugeViewInnerBackgroundStyleFlat
         gaugeView.scalesubdivisionsaligment = WMGaugeViewSubdivisionsAlignmentCenter
-        gaugeView.scaleFont = UIFont.systemFontOfSize(0.05, weight: UIFontWeightUltraLight)
+        gaugeView.scaleFont = UIFont.systemFont(ofSize: 0.05, weight: UIFontWeightUltraLight)
         
         pitchTitleLabel = UILabel()
-        pitchTitleLabel.font = UIFont.systemFontOfSize(24, weight: UIFontWeightLight)
+        pitchTitleLabel.font = UIFont.systemFont(ofSize: 24, weight: UIFontWeightLight)
         pitchTitleLabel.adjustsFontSizeToFitWidth = true
         pitchTitleLabel.textColor = UIColor.textColor()
-        pitchTitleLabel.textAlignment = .Center
+        pitchTitleLabel.textAlignment = .center
         pitchTitleLabel.text = "Pitch"
         
         pitchLabel = UILabel()
-        pitchLabel.font = UIFont.systemFontOfSize(32, weight: UIFontWeightLight)
+        pitchLabel.font = UIFont.systemFont(ofSize: 32, weight: UIFontWeightLight)
         pitchLabel.adjustsFontSizeToFitWidth = true
         pitchLabel.textColor = UIColor.textColor()
-        pitchLabel.textAlignment = .Center
+        pitchLabel.textAlignment = .center
         pitchLabel.text = "--"
         
         actionButton = BFPaperButton(raised: false)
-        actionButton.setTitle("Start", forState: .Normal)
+        actionButton.setTitle("Start", for: .normal)
         actionButton.backgroundColor = UIColor.actionButtonColor()
-        actionButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        actionButton.setTitleColor(UIColor(white: 1.0, alpha: 0.5), forState: .Highlighted)
+        actionButton.setTitleColor(UIColor.white, for: .normal)
+        actionButton.setTitleColor(UIColor(white: 1.0, alpha: 0.5), for: .highlighted)
         
         super.init(frame: frame)
         
@@ -113,11 +113,11 @@ class TunerView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        titleLabel.frame = CGRect(x: 0.0, y: 30, width: CGRectGetWidth(bounds), height: CGRectGetHeight(bounds) / 18.52)
-        gaugeView.frame = CGRect(x: 0, y: (CGRectGetHeight(bounds) - CGRectGetWidth(bounds)) / 2.0, width: CGRectGetWidth(bounds), height: CGRectGetWidth(bounds))
-        pitchTitleLabel.frame = CGRect(x: 0, y: gaugeView.frame.origin.y + 0.85 * CGRectGetHeight(gaugeView.bounds), width: CGRectGetWidth(bounds), height: CGRectGetHeight(bounds) / 23.82)
-        pitchLabel.frame = CGRect(x: 0, y: pitchTitleLabel.frame.origin.y + CGRectGetHeight(pitchTitleLabel.frame), width: CGRectGetWidth(bounds), height: CGRectGetHeight(bounds) / 18.52)
-        actionButton.frame = CGRect(x: 0, y: CGRectGetHeight(bounds) - 55, width: CGRectGetWidth(bounds), height: 55)
-        actionButton.tapCircleDiameter = 0.75 * CGRectGetWidth(bounds)
+        titleLabel.frame = CGRect(x: 0.0, y: 30, width: bounds.width, height: bounds.height / 18.52)
+        gaugeView.frame = CGRect(x: 0, y: ((bounds).height - (bounds).width) / 2.0, width: (bounds).width, height: (bounds).width)
+        pitchTitleLabel.frame = CGRect(x: 0, y: gaugeView.frame.origin.y + 0.85 * (gaugeView.bounds).height, width: (bounds).width, height: (bounds).height / 23.82)
+        pitchLabel.frame = CGRect(x: 0, y: pitchTitleLabel.frame.origin.y + pitchTitleLabel.frame.height, width: bounds.width, height: bounds.height / 18.52)
+        actionButton.frame = CGRect(x: 0, y: (bounds).height - 55, width: (bounds).width, height: 55)
+        actionButton.tapCircleDiameter = 0.75 * (bounds).width
     }
 }

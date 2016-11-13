@@ -7,19 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5FA4261699244B98A58016F3 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFE4E490E1BDCF825B7A8050 /* Pods.framework */; };
-		DD28D2A11BD3BD1E00A96149 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28D2A01BD3BD1E00A96149 /* InfoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		DD28EAFE1BD0C58000DA041C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28EAFD1BD0C58000DA041C /* UIColorExtension.swift */; settings = {ASSET_TAGS = (); }; };
+		767A609EFDD30B528B7D2099 /* Pods_Partita.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA06606BF7D7AC02AA1DABE /* Pods_Partita.framework */; };
+		DD28D2A11BD3BD1E00A96149 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28D2A01BD3BD1E00A96149 /* InfoViewController.swift */; };
+		DD28EAFE1BD0C58000DA041C /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD28EAFD1BD0C58000DA041C /* UIColorExtension.swift */; };
 		DD355BE21BC783810044C19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD355BE11BC783810044C19E /* AppDelegate.swift */; };
 		DD355BE41BC783810044C19E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD355BE31BC783810044C19E /* MainViewController.swift */; };
 		DD355BE91BC783810044C19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD355BE81BC783810044C19E /* Assets.xcassets */; };
-		DD84F8F71BD353060021186E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD84F8F61BD353060021186E /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
-		DD84F8FF1BD386FD0021186E /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD84F8FE1BD386FD0021186E /* TunerView.swift */; settings = {ASSET_TAGS = (); }; };
-		DDF8193F1BD47156002D7C20 /* Pods-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DDF8193E1BD47156002D7C20 /* Pods-acknowledgements.plist */; settings = {ASSET_TAGS = (); }; };
+		DD84F8F71BD353060021186E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD84F8F61BD353060021186E /* Launch Screen.storyboard */; };
+		DD84F8FF1BD386FD0021186E /* TunerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD84F8FE1BD386FD0021186E /* TunerView.swift */; };
+		DD8544551DD90EA800043114 /* Pods-Partita-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = DD8544541DD90EA800043114 /* Pods-Partita-acknowledgements.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		068258E6EA9BCB5EF5BC8234 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1C6A156C1A57D46CEA06B837 /* Pods-Partita.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partita.release.xcconfig"; path = "Pods/Target Support Files/Pods-Partita/Pods-Partita.release.xcconfig"; sourceTree = "<group>"; };
+		20BE7C56084CD9E5016CDB66 /* Pods-Partita.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Partita.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Partita/Pods-Partita.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA06606BF7D7AC02AA1DABE /* Pods_Partita.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Partita.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CFE4E490E1BDCF825B7A8050 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD28D2A01BD3BD1E00A96149 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		DD28EAFD1BD0C58000DA041C /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -33,8 +35,8 @@
 		DD355C201BC7974C0044C19E /* MetalKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalKit.framework; path = System/Library/Frameworks/MetalKit.framework; sourceTree = SDKROOT; };
 		DD84F8F61BD353060021186E /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		DD84F8FE1BD386FD0021186E /* TunerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TunerView.swift; sourceTree = "<group>"; };
+		DD8544541DD90EA800043114 /* Pods-Partita-acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Pods-Partita-acknowledgements.plist"; path = "../Pods/Target Support Files/Pods-Partita/Pods-Partita-acknowledgements.plist"; sourceTree = "<group>"; };
 		DDF8193E1BD47156002D7C20 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Pods-acknowledgements.plist"; path = "../Pods/Target Support Files/Pods/Pods-acknowledgements.plist"; sourceTree = "<group>"; };
-		E71AE412DF7FE4834EA01950 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +44,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FA4261699244B98A58016F3 /* Pods.framework in Frameworks */,
+				767A609EFDD30B528B7D2099 /* Pods_Partita.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,8 +58,18 @@
 				DD355C201BC7974C0044C19E /* MetalKit.framework */,
 				DD355C171BC796990044C19E /* MetalPerformanceShaders.framework */,
 				CFE4E490E1BDCF825B7A8050 /* Pods.framework */,
+				CDA06606BF7D7AC02AA1DABE /* Pods_Partita.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C946D45462A5562FF071BB92 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				20BE7C56084CD9E5016CDB66 /* Pods-Partita.debug.xcconfig */,
+				1C6A156C1A57D46CEA06B837 /* Pods-Partita.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		DD28EAFC1BD0C57400DA041C /* Extensions */ = {
@@ -73,8 +85,8 @@
 			children = (
 				DD355BE01BC783810044C19E /* Partita */,
 				DD355BDF1BC783810044C19E /* Products */,
-				E43CE8EAF0B4299527E1A52D /* Pods */,
 				5FD764D94FF8C90715C92547 /* Frameworks */,
+				C946D45462A5562FF071BB92 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +112,7 @@
 		DD355C0F1BC783F00044C19E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				DD8544541DD90EA800043114 /* Pods-Partita-acknowledgements.plist */,
 				DD355BED1BC783810044C19E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -142,15 +155,6 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		E43CE8EAF0B4299527E1A52D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				068258E6EA9BCB5EF5BC8234 /* Pods.debug.xcconfig */,
-				E71AE412DF7FE4834EA01950 /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -158,12 +162,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DD355C061BC783810044C19E /* Build configuration list for PBXNativeTarget "Partita" */;
 			buildPhases = (
-				7C7062EB038636BC4F8F0117 /* Check Pods Manifest.lock */,
+				BD5B37192951AD403696C110 /* [CP] Check Pods Manifest.lock */,
 				DD355BDA1BC783810044C19E /* Sources */,
 				DD355BDB1BC783810044C19E /* Frameworks */,
 				DD355BDC1BC783810044C19E /* Resources */,
-				115EA835270257D42730B2EB /* Copy Pods Resources */,
-				79037E2392C53B8C8E149507 /* Embed Pods Frameworks */,
+				AE5FF25AE667F49D91A75A53 /* [CP] Embed Pods Frameworks */,
+				6D172C5B4373329FBCE09C21 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -180,11 +184,12 @@
 		DD355BD61BC783810044C19E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "Comyar Zaheri";
 				TargetAttributes = {
 					DD355BDD1BC783810044C19E = {
 						CreatedOnToolsVersion = 7.0.1;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -211,7 +216,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DDF8193F1BD47156002D7C20 /* Pods-acknowledgements.plist in Resources */,
+				DD8544551DD90EA800043114 /* Pods-Partita-acknowledgements.plist in Resources */,
 				DD84F8F71BD353060021186E /* Launch Screen.storyboard in Resources */,
 				DD355BE91BC783810044C19E /* Assets.xcassets in Resources */,
 			);
@@ -220,49 +225,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		115EA835270257D42730B2EB /* Copy Pods Resources */ = {
+		6D172C5B4373329FBCE09C21 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Partita/Pods-Partita-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		79037E2392C53B8C8E149507 /* Embed Pods Frameworks */ = {
+		AE5FF25AE667F49D91A75A53 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Partita/Pods-Partita-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7C7062EB038636BC4F8F0117 /* Check Pods Manifest.lock */ = {
+		BD5B37192951AD403696C110 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -286,6 +291,7 @@
 		DD355C041BC783810044C19E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -296,8 +302,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -332,6 +340,7 @@
 		DD355C051BC783810044C19E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -342,8 +351,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -363,6 +374,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -370,37 +382,41 @@
 		};
 		DD355C071BC783810044C19E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 068258E6EA9BCB5EF5BC8234 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 20BE7C56084CD9E5016CDB66 /* Pods-Partita.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.comyarzaheri.Partita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		DD355C081BC783810044C19E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E71AE412DF7FE4834EA01950 /* Pods.release.xcconfig */;
+			baseConfigurationReference = 1C6A156C1A57D46CEA06B837 /* Pods-Partita.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Partita/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.comyarzaheri.Partita;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

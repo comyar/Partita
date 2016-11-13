@@ -38,17 +38,17 @@ private class LicenseViewController: UIViewController {
     
     var license: License?
     
-    private var textView: UITextView?
+    fileprivate var textView: UITextView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        textView = UITextView(frame: CGRect(x: 0.0, y: 82.0, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds) - 82))
-        textView?.font = UIFont.systemFontOfSize(16, weight: UIFontWeightLight)
+        textView = UITextView(frame: CGRect(x: 0.0, y: 82.0, width: view.bounds.width, height: view.bounds.height - 82))
+        textView?.font = UIFont.systemFont(ofSize: 16, weight: UIFontWeightLight)
         textView?.textContainerInset = UIEdgeInsets(top: 0.0, left: 8.0, bottom: 8.0, right: 8.0)
-        textView?.backgroundColor = UIColor.clearColor()
-        textView?.textColor = UIColor.whiteColor()
-        textView?.selectable = false
-        textView?.scrollEnabled = true
+        textView?.backgroundColor = UIColor.clear
+        textView?.textColor = UIColor.white
+        textView?.isSelectable = false
+        textView?.isScrollEnabled = true
         textView?.showsHorizontalScrollIndicator = false
         textView?.showsVerticalScrollIndicator = false
         textView?.allowsEditingTextAttributes = false
@@ -57,12 +57,12 @@ private class LicenseViewController: UIViewController {
         view.addSubview(textView!)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let l = license {
             textView?.text = l.text
         }
-        textView?.contentOffset = CGPointZero
+        textView?.contentOffset = CGPoint.zero
     }
 }
 
@@ -73,15 +73,15 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
     
     // MARK: - InfoHeaderView
     
-    private class InfoHeaderView: UITableViewHeaderFooterView {
+    fileprivate class InfoHeaderView: UITableViewHeaderFooterView {
         
         let label = UILabel()
         
         override init(reuseIdentifier: String?) {
             label.textColor = UIColor(white: 1.0, alpha: 0.5)
-            label.backgroundColor = UIColor.clearColor()
+            label.backgroundColor = UIColor.clear
             super.init(reuseIdentifier: reuseIdentifier)
-            contentView.backgroundColor = UIColor.clearColor()
+            contentView.backgroundColor = UIColor.clear
             addSubview(label)
         }
 
@@ -89,7 +89,7 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
             fatalError("init(coder:) has not been implemented")
         }
         
-        private override func layoutSubviews() {
+        fileprivate override func layoutSubviews() {
             super.layoutSubviews()
             label.frame = bounds
         }
@@ -97,21 +97,21 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
     
     // MARK: Properties
     
-    private static let licenses = PodsLicenseReader().getLicenses()
-    private static let licenseViewController = LicenseViewController()
+    fileprivate static let licenses = PodsLicenseReader(path: Bundle.main.path(forResource: "Pods-Partita-acknowledgements", ofType: "plist")).getLicenses()
+    fileprivate static let licenseViewController = LicenseViewController()
     
-    private let tableView = UITableView(frame: CGRectZero, style: .Grouped)
+    fileprivate let tableView = UITableView(frame: CGRect.zero, style: .grouped)
     
     // MARK: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
         automaticallyAdjustsScrollViewInsets = false
-        view.backgroundColor = UIColor.clearColor()
-        tableView.frame = CGRect(x: 0.0, y: 80.0, width: CGRectGetWidth(view.bounds), height: CGRectGetHeight(view.bounds) - 80)
-        tableView.registerClass(InfoHeaderView.self, forHeaderFooterViewReuseIdentifier: "headerFooterView")
-        tableView.separatorStyle = .None
-        tableView.backgroundColor = UIColor.clearColor()
+        view.backgroundColor = UIColor.clear
+        tableView.frame = CGRect(x: 0.0, y: 80.0, width: (view.bounds).width, height: (view.bounds).height - 80)
+        tableView.register(InfoHeaderView.self, forHeaderFooterViewReuseIdentifier: "headerFooterView")
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.clear
         tableView.dataSource = self
         tableView.delegate = self
         view.addSubview(tableView)
@@ -119,37 +119,37 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
     
     //  MARK: AMWaveTransion
     
-    override func visibleCells() -> [AnyObject]! {
+    @objc override func visibleCells() -> [Any]! {
         var cells: [AnyObject] = tableView.visibleCells
-        if let header = tableView.headerViewForSection(0) {
-            cells.insert(header, atIndex: 0)
+        if let header = tableView.headerView(forSection: 0) {
+            cells.insert(header, at: 0)
         }
-        if let header = tableView.headerViewForSection(1) {
-            cells.insert(header, atIndex: 2)
+        if let header = tableView.headerView(forSection: 1) {
+            cells.insert(header, at: 2)
         }
         return cells
     }
     
     // MARK: UITableViewDataSource
     
-    @objc func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    @objc func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell? = nil
         if indexPath.section == 0 {
-            cell = tableView.dequeueReusableCellWithIdentifier("creditCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "creditCell")
             if cell == nil {
-                cell = UITableViewCell(style: .Default, reuseIdentifier: "creditCell")
-                cell?.textLabel?.textColor = UIColor.whiteColor()
-                cell?.backgroundColor = UIColor.clearColor()
+                cell = UITableViewCell(style: .default, reuseIdentifier: "creditCell")
+                cell?.textLabel?.textColor = UIColor.white
+                cell?.backgroundColor = UIColor.clear
                 cell?.textLabel?.text = "Created by Comyar Zaheri"
-                cell?.selectionStyle = .None
+                cell?.selectionStyle = .none
             }
         } else {
-            cell = tableView.dequeueReusableCellWithIdentifier("licenseCell")
+            cell = tableView.dequeueReusableCell(withIdentifier: "licenseCell")
             if cell == nil {
-                cell = UITableViewCell(style: .Default, reuseIdentifier: "licenseCell")
-                cell?.textLabel?.textColor = UIColor.whiteColor()
-                cell?.backgroundColor = UIColor.clearColor()
-                cell?.accessoryType = .DisclosureIndicator
+                cell = UITableViewCell(style: .default, reuseIdentifier: "licenseCell")
+                cell?.textLabel?.textColor = UIColor.white
+                cell?.backgroundColor = UIColor.clear
+                cell?.accessoryType = .disclosureIndicator
             }
             let license = InfoTableViewController.licenses[indexPath.row]
             cell?.textLabel?.text = license.name
@@ -157,27 +157,27 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
         return cell!
     }
     
-    @objc func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    @objc func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50.0
     }
     
-    @objc func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    @objc func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50.0
     }
     
-    @objc func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    @objc func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
     
-    @objc func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    @objc func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return section == 0 ? 1 : InfoTableViewController.licenses.count
     }
     
     // MARK: UITableViewDelegate
     
-    @objc func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    @objc func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.section > 0 {
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if let cell = tableView.cellForRow(at: indexPath) {
                 cell.setSelected(false, animated: true)
                 InfoTableViewController.licenseViewController.license = InfoTableViewController.licenses[indexPath.row]
                 self.navigationController?.pushViewController(InfoTableViewController.licenseViewController, animated: true)
@@ -185,16 +185,16 @@ private class InfoTableViewController: AMWaveViewController, UITableViewDelegate
         }
     }
     
-    @objc func tableView(tableView: UITableView, didUnhighlightRowAtIndexPath indexPath: NSIndexPath) {
+    @objc func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         if indexPath.section > 0 {
-            if let cell = tableView.cellForRowAtIndexPath(indexPath) {
+            if let cell = tableView.cellForRow(at: indexPath) {
                 cell.setSelected(false, animated: true)
             }
         }
     }
     
-    @objc func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        var header = tableView.dequeueReusableHeaderFooterViewWithIdentifier("infoHeaderView")
+    @objc func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "infoHeaderView")
         if header == nil {
             header = InfoHeaderView(reuseIdentifier: "infoHeaderView")
             (header as! InfoHeaderView).label.text = section == 0 ? "   CREDITS" : "   LICENSES"
@@ -210,13 +210,13 @@ class InfoViewController: UIViewController {
     
     // MARK: Properties
     
-    private let closeButton: BFPaperButton
-    private let infoTableViewController: InfoTableViewController
-    private let navigationViewController: UINavigationController
+    fileprivate let closeButton: BFPaperButton
+    fileprivate let infoTableViewController: InfoTableViewController
+    fileprivate let navigationViewController: UINavigationController
     
     // MARK: Creating an InfoViewController
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         closeButton = BFPaperButton(raised: true)
         infoTableViewController = InfoTableViewController()
         navigationViewController = UINavigationController(rootViewController: infoTableViewController)
@@ -231,40 +231,40 @@ class InfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationViewController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFontOfSize(32.0, weight: UIFontWeightLight), NSForegroundColorAttributeName: UIColor.whiteColor()]
-        navigationViewController.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationViewController.navigationBar.tintColor = UIColor.whiteColor()
-        navigationViewController.navigationBar.backgroundColor = UIColor.clearColor()
+        navigationViewController.navigationBar.titleTextAttributes = [NSFontAttributeName: UIFont.systemFont(ofSize: 32.0, weight: UIFontWeightLight), NSForegroundColorAttributeName: UIColor.white]
+        navigationViewController.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationViewController.navigationBar.tintColor = UIColor.white
+        navigationViewController.navigationBar.backgroundColor = UIColor.clear
         navigationViewController.automaticallyAdjustsScrollViewInsets = false
-        navigationViewController.view.backgroundColor = UIColor.clearColor()
+        navigationViewController.view.backgroundColor = UIColor.clear
         navigationViewController.navigationBar.shadowImage = UIImage()
-        navigationViewController.navigationBar.translucent = true
+        navigationViewController.navigationBar.isTranslucent = true
         addChildViewController(navigationViewController)
         view.addSubview(navigationViewController.view)
         
-        closeButton.frame = CGRect(x: CGRectGetWidth(view.bounds) - 54, y: 30, width: 44, height: 44)
-        closeButton.addTarget(self, action: "didTouchUpInsideButton:", forControlEvents: .TouchUpInside)
-        closeButton.cornerRadius = CGRectGetWidth(closeButton.bounds) / 2.0
-        closeButton.setTitleColor(UIColor.textColor(), forState: .Normal)
-        closeButton.backgroundColor = UIColor.whiteColor()
-        closeButton.setTitle("X", forState: .Normal)
+        closeButton.frame = CGRect(x: (view.bounds).width - 54, y: 30, width: 44, height: 44)
+        closeButton.addTarget(self, action: #selector(InfoViewController.didTouchUpInsideButton(_:)), for: .touchUpInside)
+        closeButton.cornerRadius = (closeButton.bounds).width / 2.0
+        closeButton.setTitleColor(UIColor.textColor(), for: .normal)
+        closeButton.backgroundColor = UIColor.white
+        closeButton.setTitle("X", for: .normal)
         closeButton.rippleBeyondBounds = true
         view.addSubview(closeButton)
         
-        let navigationLineView = UIView(frame: CGRect(x: 0.0, y: 80.0, width: CGRectGetWidth(view.bounds), height: 0.5))
+        let navigationLineView = UIView(frame: CGRect(x: 0.0, y: 80.0, width: view.bounds.width, height: 0.5))
         navigationLineView.backgroundColor = UIColor(white: 1.0, alpha: 0.75)
         view.addSubview(navigationLineView)
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .LightContent
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
     }
     
     // MARK: UIButton
     
-    func didTouchUpInsideButton(button: UIButton) {
+    func didTouchUpInsideButton(_ button: UIButton) {
         if (button == closeButton) {
-            dismissViewControllerAnimated(true, completion: nil)
+            dismiss(animated: true, completion: nil)
         }
     }
 }

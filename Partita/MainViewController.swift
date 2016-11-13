@@ -1,3 +1,4 @@
+
 //
 //  TunerViewController.swift
 //  Partita
@@ -40,14 +41,14 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
 
     // MARK: Properties
     
-    private var tuner: Tuner?
-    private var tunerView: TunerView?
-    private var infoButton: BFPaperButton?
-    private var infoViewController: InfoViewController?
+    fileprivate var tuner: Tuner?
+    fileprivate var tunerView: TunerView?
+    fileprivate var infoButton: BFPaperButton?
+    fileprivate var infoViewController: InfoViewController?
 
-    private var running = false
-    private let transition = BubbleTransition()
-    private let permissions = PermissionScope()
+    fileprivate var running = false
+    fileprivate let transition = BubbleTransition()
+    fileprivate let permissions = PermissionScope()
     
     // MARK: UIViewController
     
@@ -63,15 +64,15 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
         permissions.permissionLabelColor = UIColor.textColor()
         
         tunerView = TunerView(frame: view.frame)
-        tunerView?.actionButton.addTarget(self, action: "didTouchUpInsideButton:", forControlEvents: .TouchUpInside)
+        tunerView?.actionButton.addTarget(self, action: #selector(MainViewController.didTouchUpInsideButton(_:)), for: .touchUpInside)
         view.addSubview(tunerView!)
         
-        infoButton = BFPaperButton(frame: CGRectMake(CGRectGetWidth(view.bounds) - 54, 30, 44, 44), raised: true)
-        infoButton?.addTarget(self, action: "didTouchUpInsideButton:", forControlEvents: .TouchUpInside)
-        infoButton?.cornerRadius = CGRectGetWidth(infoButton!.bounds) / 2.0
-        infoButton?.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        infoButton = BFPaperButton(frame: CGRect(x: (view.bounds).width - 54, y: 30, width: 44, height: 44), raised: true)
+        infoButton?.addTarget(self, action: #selector(MainViewController.didTouchUpInsideButton(_:)), for: .touchUpInside)
+        infoButton?.cornerRadius = (infoButton!.bounds).width / 2.0
+        infoButton?.setTitleColor(UIColor.white, for: .normal)
         infoButton?.backgroundColor = UIColor.partitaDarkBlueColor()
-        infoButton?.setTitle("i", forState: .Normal)
+        infoButton?.setTitle("i", for: .normal)
         infoButton?.rippleBeyondBounds = true
         view.addSubview(infoButton!)
         
@@ -85,7 +86,7 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
         if !running {
             running = true
             tuner?.start()
-            tunerView?.actionButton.setTitle("Stop", forState: .Normal)
+            tunerView?.actionButton.setTitle("Stop", for: .normal)
             tunerView?.actionButton.backgroundColor = UIColor.partitaDarkBlueColor()
         }
     }
@@ -96,36 +97,36 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
             tuner?.stop()
             tunerView?.gaugeView.value = 0.0
             tunerView?.pitchLabel.text = "--"
-            tunerView?.actionButton.setTitle("Start", forState: .Normal)
+            tunerView?.actionButton.setTitle("Start", for: .normal)
             tunerView?.actionButton.backgroundColor = UIColor.actionButtonColor()
         }
     }
     
     // MARK: TunerDelegate
     
-    func tunerDidUpdate(tuner: Tuner, output: TunerOutput) {
+    func tunerDidUpdate(_ tuner: Tuner, output: TunerOutput) {
         if output.amplitude < 0.01 {
             tunerView?.gaugeView.value = 0.0
             tunerView?.pitchLabel.text = "--"
         } else {
             tunerView?.pitchLabel.text = output.pitch + "\(output.octave)"
-            tunerView?.gaugeView.value = output.distance
+            tunerView?.gaugeView.value = Float(output.distance)
         }
     }
     
     // MARK: UIButton
     
-    func didTouchUpInsideButton(button: UIButton) {
+    func didTouchUpInsideButton(_ button: UIButton) {
         if button == tunerView?.actionButton {
             if running {
                 stopTuner()
             } else {
-                if permissions.statusMicrophone() == .Authorized {
+                if permissions.statusMicrophone() == .authorized {
                     self.startTuner()
                 } else {
                     permissions.show({ (finished, results) -> Void in
-                        let result = results.filter({ $0.type == .Microphone })[0]
-                        if result.status != .Authorized {
+                        let result = results.filter({ $0.type == .microphone })[0]
+                        if result.status != .authorized {
                             self.showMicrophoneAccessAlert()
                         }
                     }, cancelled: { (results) -> Void in
@@ -136,38 +137,38 @@ class MainViewController: UIViewController, UIViewControllerTransitioningDelegat
         } else if button == infoButton {
             infoViewController = InfoViewController()
             infoViewController?.transitioningDelegate = self
-            infoViewController?.modalPresentationStyle = .Custom
-            self.presentViewController(infoViewController!, animated: true, completion: nil)
+            infoViewController?.modalPresentationStyle = .custom
+            self.present(infoViewController!, animated: true, completion: nil)
         }
     }
     
     // MARK: UIViewControllerTransitioningDelegate
     
-    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.duration = 0.3
-        transition.transitionMode = .Present
+        transition.transitionMode = .present
         transition.startingPoint = infoButton!.center
         transition.bubbleColor = UIColor.infoBackgroundColor()
         return transition
     }
     
-    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.duration = 0.3
-        transition.transitionMode = .Dismiss
+        transition.transitionMode = .dismiss
         transition.startingPoint = infoButton!.center
         transition.bubbleColor = UIColor.infoBackgroundColor()
         return transition
     }
     
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return .Default
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .default
     }
     
     // MARK: Private
     
-    private func showMicrophoneAccessAlert() {
-        let alert = UIAlertController(title: "Microphone Access", message: "Partita requires access to your microphone; please enable access in your device's settings.", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
+    fileprivate func showMicrophoneAccessAlert() {
+        let alert = UIAlertController(title: "Microphone Access", message: "Partita requires access to your microphone; please enable access in your device's settings.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

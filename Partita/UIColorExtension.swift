@@ -61,7 +61,7 @@ extension UIColor {
         return partitaDarkBlueColor()
     }
     
-    class func rgba(r: Float, _ g: Float, _ b: Float, _ a: Float) -> UIColor {
+    class func rgba(_ r: Float, _ g: Float, _ b: Float, _ a: Float) -> UIColor {
         return UIColor(red: CGFloat(r/255.0), green: CGFloat(g/255.0), blue: CGFloat(b/255.0), alpha: CGFloat(a))
     }
     
