@@ -33,7 +33,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
 	<key>NSMicrophoneUsageDescription</key>
-	<string>Need microphone access for guitar tuning</string>
+	<string>Partita requires microphone access for instrument tuning.</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
