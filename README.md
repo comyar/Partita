@@ -45,5 +45,6 @@ Partita is available under the [MIT License](LICENSE).
 # Contributors
 
 * [@comyar](https://github.com/comyar)
+* [@nnarayann](https://github.com/nnarayann)
 
 
