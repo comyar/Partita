@@ -2,8 +2,6 @@
 
 # Overview
 
-[![git-brag-stats](https://labs.turbo.run/git-brag?user=comyar&repo=Partita)](https://github.com/comyar/Partita)
-
 Partita is a simple instrument tuner for iOS written in Swift, powered by [TuningFork](https://github.com/comyarzaheri/TuningFork).
 
 <img src="screenshot-1.png" width=355>
